@@ -1,11 +1,14 @@
 import {GlobalStyle} from "./styles/global";
+import {Header} from "./Components/Header";
+import {Dashboard} from "./Components/Dashboard";
 
 export const App = () => {
   return (
-    <div className="App">
-      <h1>Hello world</h1>
+    <>
+        <Header/>
+        <Dashboard/>
         <GlobalStyle/>
-    </div>
+    </>
   );
 }
 
