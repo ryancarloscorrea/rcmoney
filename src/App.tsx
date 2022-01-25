@@ -4,6 +4,7 @@ import {Dashboard} from "./Components/Dashboard";
 import ReactModal from "react-modal";
 import {useState} from "react";
 import {NewTransactionModal} from "./Components/NewTransactionModal";
+import {TransactionsProvider} from "./hooks/useTransactions";
 
 export const App = () => {
 
@@ -20,12 +21,12 @@ export const App = () => {
     }
 
   return (
-    <>
+    <TransactionsProvider>
         <Header onOpenNewTransactionModal={handleOpenNewTransactionModal}/>
         <Dashboard/>
         <GlobalStyle/>
         <NewTransactionModal isOpen={isNewTransactionModalOpen} onRequestClose={handleCloseNewTransactionModal}/>
-    </>
+    </TransactionsProvider>
   );
 }
 
